@@ -4,6 +4,26 @@
 
 using namespace std;
 
+Noh *rotacao_esquerda(DicAVL &D, Noh *noA);
+
+Noh *rotacao_direita(DicAVL &D, Noh *noA);
+
+Noh *min(Noh *no);
+
+Noh *max(Noh *no);
+
+int altura(Noh *no);
+
+void atualizar_altura(Noh *no);
+
+int esta_pensa_a(Noh *no);
+
+void mostrar_no(Noh *raiz, Noh *no);
+
+void deletar(Noh* no);
+
+// =========================	ACIMA, FUNÇÕES COMPLEMENTARES	=========================
+
 // Inicializa D como uma árvore vazia.
 void inicializar (DicAVL &D) {
 	D.raiz = NULL;
@@ -152,10 +172,10 @@ void remover(DicAVL &D, Noh *n) {
 				(*noP).dir = noE;
 			else
 				(*noP).esq = noE;
-			
-			(*noE).pai = noP;
 		
 		} else D.raiz = noE;
+
+		(*noE).pai = noP;
 	} // possui somente filho direito
 	else if (noE == NULL) {
 		if (noP != NULL) {
@@ -164,10 +184,10 @@ void remover(DicAVL &D, Noh *n) {
 				(*noP).dir = noD;
 			else
 				(*noP).esq = noD;
-			
-			(*noD).pai = noP;
 		
 		} else D.raiz = noE;
+
+		(*noD).pai = noP;
 	} // possui os 2 filhos
 	else {
 		Noh *ant = max(noE); // 'ant' é antecessor de 'no'
@@ -255,7 +275,7 @@ void remover(DicAVL &D, Noh *n) {
 	delete(no);
 }
 
-// =========================	FUNÇÕES COMPLEMENTARES	=========================
+// =========================	IMPLEMENTAÇÃO FUNÇÕES COMPLEMENTARES	=========================
 
 Noh *rotacao_esquerda(DicAVL &D, Noh *noA) {
 	if (noA != NULL && (*noA).dir != NULL) {

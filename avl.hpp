@@ -21,23 +21,3 @@ Noh* procurar (DicAVL &D, TC c); // Retorna um ponteiro para o nó da chave proc
 void remover (DicAVL &D, Noh *n); // ’n’ aponta para o nó a ser removido
 
 void terminar (DicAVL &D); // Desaloca os nós da árvore.
-
-// =========================	FUNÇÕES COMPLEMENTARES	=========================
-
-Noh *rotacao_esquerda(DicAVL &D, Noh *noA);
-
-Noh *rotacao_direita(DicAVL &D, Noh *noA);
-
-Noh *min(Noh *no);
-
-Noh *max(Noh *no);
-
-int altura(Noh *no);
-
-void atualizar_altura(Noh *no);
-
-int esta_pensa_a(Noh *no);
-
-void mostrar_no(Noh *raiz, Noh *no);
-
-void deletar(Noh* no);
